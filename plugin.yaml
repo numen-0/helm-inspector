@@ -1,7 +1,7 @@
 name: inspector
-version: 0.1.0
-usage: "Render charts and browse them"
-description: "Render Helm charts and browse the resources interactively."
+version: 0.1.2
+usage: "render charts and browse them"
+description: "render Helm charts and browse the resources interactively."
 ignoreFlags: false
 command: "${HELM_PLUGIN_DIR}/helm-inspector.sh"
 hooks:

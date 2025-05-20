@@ -123,8 +123,8 @@ done
 
 while true; do
     FILE="$(find "$TMP_DIR" -type f -name '*.yaml' |\
-        fzf --preview="$PREVIEW_CMD" --preview-window=up:90%:wrap \
-        --style=full:bottom --color=dark)"
+        fzf --preview="$PREVIEW_CMD" --preview-window=up,90%,wrap,border-bottom \
+        --border=bottom --color=dark)"
 
     [ -f "$FILE" ] || exit 0
 
