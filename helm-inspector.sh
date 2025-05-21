@@ -10,10 +10,11 @@ set -eu
 ###############################################################################
 # config ######################################################################
 
+SRC_PATH="$(dirname "$0")"
 DEF_CHART_NAME='preview'
 DEF_PREVIEW_CMD='cat {}'
 DEF_YQ_PREVIEW_CMD='cat {} | yq -I4 -PC'
-[ -f "${HELM_PLUGIN_DIR:-.}/config.sh" ] && . "${HELM_PLUGIN_DIR:-.}/config.sh"
+[ -f "${HELM_PLUGIN_DIR:-$SRC_PATH}/config.sh" ] && . "${HELM_PLUGIN_DIR:-$SRC_PATH}/config.sh"
 
 ###############################################################################
 # help ########################################################################
@@ -53,7 +54,7 @@ Examples:
 
 Config:
     To override configuration variables, create or modify:
-        ${HELM_PLUGIN_DIR:-.}/config.sh
+        ${HELM_PLUGIN_DIR:-$SRC_PATH}/config.sh
 EOF
     exit 0
 fi
